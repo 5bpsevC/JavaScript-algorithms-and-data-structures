@@ -76,3 +76,118 @@ Basado en **Master The Coding Interview: Data Structures + Algorithms** de Andre
 ## Recuerda:
 
 **Comunica tu proceso de pensamiento tanto como sea posible.** No te preocupes por terminar rápido. Cada parte de la entrevista importa.
+
+
+### **Plan Semanal para Dominar Estructuras de Datos y Algoritmos**
+
+**Duración**: 1 semana (puedes repetir o ajustar según tu progreso).  
+**Tiempo diario estimado**: 1.5-2 horas (ajustable según tu disponibilidad).  
+**Objetivo**: Aprender y practicar estructuras de datos (arrays, objetos, sets, maps, stacks, queues) y algoritmos (ordenamiento, búsqueda, simulación), con énfasis en resolver problemas, revisar soluciones y explicar ideas.
+
+---
+
+#### **Día 1: Fundamentos de Arrays y Ordenamiento**
+- **Teoría (30 min)**:  
+  - Lee sobre **arrays**: cómo funcionan, acceso por índices, operaciones comunes (push, pop, splice, etc.).  
+  - Estudia algoritmos de ordenamiento básicos: **Bubble Sort** y **Selection Sort**. Usa recursos como GeeksforGeeks o freeCodeCamp.  
+  - Ejemplo: Un array es como una lista ordenada de casilleros donde cada casillero tiene un índice (0, 1, 2...).
+- **Práctica (1 hora)**:  
+  - Resuelve 2-3 problemas de **Codewars** o **LeetCode** relacionados con arrays (nivel fácil). Ejemplo: "Two Sum" (LeetCode) o "Remove Duplicates from Sorted Array".  
+  - Implementa **Bubble Sort** en tu lenguaje preferido (Python, JavaScript, etc.).  
+  - Explica en voz alta o por escrito cómo funciona tu solución para uno de los problemas.  
+- **Revisión (15 min)**:  
+  - Revisa tu código: ¿Es legible? ¿Puedes optimizarlo (por ejemplo, reducir bucles)? Compara con soluciones oficiales o de otros usuarios.  
+  - Anota qué aprendiste o qué error cometiste.
+
+---
+
+#### **Día 2: Objetos y Búsqueda**
+- **Teoría (30 min)**:  
+  - Aprende sobre **objetos** (o diccionarios/hashes): estructura clave-valor, cómo iterar, ventajas frente a arrays.  
+  - Estudia algoritmos de búsqueda: **Linear Search** y **Binary Search** (este último requiere un array ordenado).  
+  - Ejemplo: Un objeto es como un cuaderno donde cada "clave" es una etiqueta y el "valor" es el contenido.  
+- **Práctica (1 hora)**:  
+  - Resuelve 2-3 problemas en **Codewars** o **LeetCode** que usen objetos (ejemplo: contar frecuencias de caracteres en una cadena).  
+  - Implementa **Binary Search** en un array ordenado.  
+  - Explica en voz alta cómo resolviste un problema o por qué elegiste un objeto en lugar de un array.  
+- **Revisión (15 min)**:  
+  - Compara tu solución con otras en la plataforma. ¿Usaste más memoria o tiempo del necesario?  
+  - Reflexiona: ¿Podrías haber usado una estructura diferente para mejorar la eficiencia?
+
+---
+
+#### **Día 3: Sets y Maps**
+- **Teoría (30 min)**:  
+  - Estudia **Sets**: colecciones de elementos únicos, operaciones como unión, intersección, diferencia.  
+  - Aprende sobre **Maps**: estructuras clave-valor con mejor rendimiento para búsquedas que objetos en algunos casos.  
+  - Ejemplo: Un Set es como un club exclusivo donde no hay miembros repetidos.  
+- **Práctica (1 hora)**:  
+  - Resuelve problemas que involucren Sets (ejemplo: "Contains Duplicate" en LeetCode) o Maps (ejemplo: "Word Frequency").  
+  - Escribe una función que use un Set para eliminar duplicados de un array.  
+  - Explica por escrito por qué un Set o Map fue útil en tu solución.  
+- **Revisión (15 min)**:  
+  - Revisa si tu solución es eficiente en tiempo y espacio. ¿Podrías haber usado un array en lugar de un Set? ¿Por qué no lo hiciste?  
+  - Busca soluciones alternativas en la plataforma para comparar.
+
+---
+
+#### **Día 4: Stacks**
+- **Teoría (30 min)**:  
+  - Aprende sobre **Stacks** (pilas): estructura LIFO (Last In, First Out). Operaciones: PUSH, POP, PEEK.  
+  - Ejemplo: Una pila es como una torre de platos: solo puedes agregar o quitar el de arriba.  
+  - Lee sobre problemas clásicos como "Valid Parentheses" que usan stacks.  
+- **Práctica (1 hora)**:  
+  - Resuelve 2-3 problemas de stacks en **LeetCode** (ejemplo: "Valid Parentheses" o "Min Stack").  
+  - Implementa una pila desde cero usando un array.  
+  - Explica en voz alta cómo tu pila maneja un problema específico.  
+- **Revisión (15 min)**:  
+  - Revisa tu código: ¿Es claro? ¿Podrías optimizar el uso de memoria?  
+  - Reflexiona: ¿Qué aprendiste sobre el uso de stacks en problemas reales?
+
+---
+
+#### **Día 5: Queues**
+- **Teoría (30 min)**:  
+  - Estudia **Queues** (colas): estructura FIFO (First In, First Out). Operaciones: ENQUEUE, DEQUEUE.  
+  - Ejemplo: Una cola es como una fila en el supermercado: el primero en llegar es el primero en salir.  
+  - Lee sobre problemas como "Implement Queue using Stacks".  
+- **Práctica (1 hora)**:  
+  - Resuelve 2-3 problemas de queues en **LeetCode** o **Codewars** (ejemplo: "Moving Zeros to the End").  
+  - Implementa una cola desde cero usando un array.  
+  - Explica por escrito cómo usaste la cola en un problema.  
+- **Revisión (15 min)**:  
+  - Compara tu solución con otras. ¿Podrías usar una estructura diferente?  
+  - Anota un error que cometiste y cómo lo corregiste.
+
+---
+
+#### **Día 6: Algoritmos de Simulación y Repaso**
+ - **Teoría (30 min)**:  
+   - Aprende sobre algoritmos de **simulación**: cómo modelar procesos paso a paso (ejemplo: simular un juego o un sistema).  
+   - Repasa las estructuras vistas (arrays, objetos, sets, maps, stacks, queues).  
+   - Ejemplo: Una simulación puede ser como seguir las reglas de un juego de cartas turno por turno.  
+ - **Práctica (1 hora)**:  
+   - Resuelve un problema de simulación en **LeetCode** (ejemplo: "Game of Life" o un problema de colas como "Task Scheduler").  
+   - Combina estructuras: por ejemplo, usa un Set y una Queue en un mismo problema.  
+   - Explica en voz alta cómo modelaste el problema.  
+ - **Revisión (15 min)**:  
+   - Reflexiona: ¿Tu solución fue intuitiva o complicada? ¿Cómo podrías simplificarla?  
+   - Revisa un problema de días anteriores que te costó y vuelve a intentarlo.
+
+---
+
+#### **Día 7: Proyecto Final y Reflexión**
+- **Teoría (15 min)**:  
+  - Repasa un concepto que te haya costado durante la semana (por ejemplo, Binary Search o Stacks).  
+  - Lee sobre **complejidad temporal y espacial** (Big O) si no lo has hecho aún.  
+- **Práctica (1.5 horas)**:  
+  - Elige un problema de nivel medio en **LeetCode** o **Codewars** que combine varias estructuras (ejemplo: "LRU Cache" o "Top K Frequent Elements").  
+  - Escribe una solución completa, optimizada y comentada.  
+  - Explica por escrito o en voz alta cada paso de tu solución, como si estuvieras enseñándoselo a ப
+
+System: ¡Genial! El plan que te propuse está diseñado para ser práctico y progresivo, cubriendo las estructuras de datos y algoritmos que mencionaste, con un enfoque en aprender, practicar y reflexionar. Si quieres, puedo ajustar el plan según tu nivel actual, lenguaje de programación preferido o disponibilidad de tiempo. También puedo ayudarte con:
+
+- **Ejemplos de problemas específicos**: Puedo recomendarte problemas concretos de Codewars o LeetCode para cada día.
+- **Explicaciones detalladas**: Si quieres, puedo profundizar en alguna estructura o algoritmo (por ejemplo, cómo implementar un stack o cómo optimizar una búsqueda binaria).
+- **Código de ejemplo**: Puedo darte ejemplos de código en Python, JavaScript u otro lenguaje para las implementaciones.
+
