@@ -31,4 +31,3 @@ function removeChar(str: string): string {
   return result;
 }
 
-console.log(removeChar("eloquent"));
