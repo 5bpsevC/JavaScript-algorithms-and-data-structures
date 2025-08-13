@@ -10,7 +10,7 @@ Bienvenido a la guía. Aquí encontrarás todos los temas organizados para que p
 
 * [📈 Intro a Big O Notation](./docs/01-intro-to-BigO/README.md)
 * [🧮 Performance de arrays y objetos](./docs/performance-arrays-objetos/README.md)
-* [🛠 Técnicas para optimizar código](#-técnicas-para-optimizar-código)
+* [🛠  Enfoque de resolución de problemas](./docs/03-enfoque%20de%20resolución%20de%20problemas/README.md)
 
 ### 💡 Ejercicios Prácticos
 
