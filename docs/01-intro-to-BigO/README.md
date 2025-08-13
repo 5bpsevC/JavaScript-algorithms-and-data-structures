@@ -1,9 +1,3 @@
-Perfecto. Te lo puedo dejar más completo, con un estilo claro, ejemplos extra y un toque más didáctico para que la introducción a Big O sea más atractiva y útil.
-
-Aquí va la versión mejorada:
-
----
-
 ## 📈 Intro to Big O Notation
 
 Big O notation es una forma de describir **el rendimiento y la eficiencia** de un algoritmo, especialmente en términos de cómo crece su tiempo de ejecución o uso de memoria cuando aumenta la cantidad de datos de entrada.
