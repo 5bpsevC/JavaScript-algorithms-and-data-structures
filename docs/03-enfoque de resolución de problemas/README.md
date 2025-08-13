@@ -117,8 +117,12 @@ Una vez que la solución simplificada funciona, refactoriza para manejar los cas
 **Ejemplo de Código Refactorizado (JavaScript):**
 
 ```ts
-function countAllChars(str: string) {
-  const counts = {};
+interface Counts {
+  [key: string]: number;
+}
+
+function countAllChars(str: string): Counts {
+  const counts: Counts = {};
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i].toLowerCase();
