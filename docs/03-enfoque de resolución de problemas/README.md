@@ -122,8 +122,6 @@ function countAllChars(str: string) {
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i].toLowerCase();
-
-    // Simplemente cuenta el carácter sin validación
     counts[char] = (counts[char] || 0) + 1;
   }
 
