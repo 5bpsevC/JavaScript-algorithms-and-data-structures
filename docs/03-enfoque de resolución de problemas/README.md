@@ -136,4 +136,7 @@ function countChars(str) {
 // Ejemplo de uso:
 console.log(countChars("Hello, my name is Paul!"));
 // Salida: { h: 1, e: 2, l: 3, o: 1, m: 2, y: 1, n: 1, a: 1, i: 2, s: 1, p: 1, u: 1 }
+
+console.log(countChars("Hello, my name is Pauuuuuuuuuul!"));
+// Salida: { h: 1, e: 2, l: 3, o: 1, m: 2, y: 1, n: 1, a: 1, i: 2, s: 1, p: 1, u: 10 }
 ```
