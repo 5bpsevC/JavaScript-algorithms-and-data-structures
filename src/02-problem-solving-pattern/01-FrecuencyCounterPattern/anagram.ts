@@ -30,7 +30,7 @@ function validAnagram(arr1: string, arr2: string) {
       return false;
     } else {
       // Si existe, descontamos una ocurrencia de esa letra
-      // Descontar la ocurrencia asegura que cada letra de la segunda cadena 
+      // Descontar la ocurrencia asegura que cada letra de la segunda cadena
       // solo se use tantas veces como aparece en la primera, que es justo lo que define un anagrama
       anagram[char] -= 1;
     }
@@ -49,4 +49,4 @@ console.log(validAnagram("rat", "car")); // false
 console.log(validAnagram("awesome", "awesom")); // false
 console.log(validAnagram("qwerty", "qeywrt")); // true
 console.log(validAnagram("texttwisttime", "timetwisttext")); // true
-console.log("Anagrama: ", validAnagram("anagram", "nagaram"))
+console.log("Anagrama: ", validAnagram("anagram", "nagaram"));

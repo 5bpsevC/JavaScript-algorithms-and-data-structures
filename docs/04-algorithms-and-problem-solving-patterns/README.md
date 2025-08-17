@@ -301,3 +301,142 @@ Ahora iteramos sobre cada letra de `arr2` y **descontamos**:
 
 ---
 
+## Patrón: Multiple Pointers
+
+## Descripción
+
+El patrón **Multiple Pointers** consiste en usar **punteros o índices** que se mueven a través de un array desde distintos extremos (inicio, final o medio) para resolver problemas de manera eficiente.
+
+Este patrón es especialmente útil para:
+
+- Arrays ordenados.
+- Reducir la complejidad de espacio a O(1).
+- Evitar bucles anidados innecesarios.
+
+---
+
+## Estrategia
+
+1. Inicializa dos punteros (`left` y `right`) en posiciones estratégicas:
+   - `left`: inicio del array
+   - `right`: final del array
+2. Mientras los punteros no se crucen:
+   - Calcula alguna condición basada en los valores apuntados.
+   - Ajusta los punteros hacia el medio según la condición:
+     - Si necesitas un valor mayor, mueve `left` a la derecha.
+     - Si necesitas un valor menor, mueve `right` a la izquierda.
+3. Devuelve el resultado cuando se cumpla la condición o indefinido si no existe.
+
+---
+
+## Ejemplo: Encontrar un par cuya suma sea 0
+
+**Problema:**  
+Escriba una función `sumZero` que acepte un array ordenado de enteros y devuelva el **primer par** cuya suma sea 0, o `undefined` si no existe.
+
+```javascript
+function sumZero(arr) {
+  // Inicializamos los punteros
+  let left = 0;
+  let right = arr.length - 1;
+
+  // Recorremos el array mientras left < right
+  while (left < right) {
+    let sum = arr[left] + arr[right];
+
+    // Si la suma es 0, devolvemos el par
+    if (sum === 0) {
+      return [arr[left], arr[right]];
+    }
+    // Si la suma es mayor que 0, movemos el puntero derecho
+    else if (sum > 0) {
+      right--;
+    }
+    // Si la suma es menor que 0, movemos el puntero izquierdo
+    else {
+      left++;
+    }
+  }
+  // Si no se encuentra ningún par, devuelve undefined
+}
+```
+
+**Ejemplo de uso:**
+
+```javascript
+console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 4])); // [-4, 4]
+console.log(sumZero([-3, -2, -1, 0, 1, 2])); // [-2, 2]
+console.log(sumZero([1, 2, 3])); // undefined
+```
+
+---
+
+## Complejidad
+
+- **Tiempo:** O(n) → cada elemento se visita como máximo una vez.
+- **Espacio:** O(1) → no se crean estructuras de datos adicionales significativas.
+
+---
+
+## Ventajas
+
+- Muy eficiente para arrays ordenados.
+- Reduce la necesidad de bucles anidados.
+- Fácil de implementar y entender.
+
+---
+
+### Ejemplo 2: Encontrar **todos los pares** cuya suma sea 0
+
+**Problema:**
+Modificar la función para que devuelva un **array con todos los pares** que sumen 0.
+
+```javascript
+function allSumZero(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  const resultado = [];
+
+  while (left < right) {
+    let sum = arr[left] + arr[right];
+
+    if (sum === 0) {
+      resultado.push([arr[left], arr[right]]);
+      left++;
+      right--;
+    } else if (sum > 0) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+
+  return resultado;
+}
+```
+
+**Ejemplo de uso:**
+
+```javascript
+console.log(allSumZero([-4, -3, -2, -1, 0, 1, 2, 3, 4]));
+// Output: [ [-4, 4], [-3, 3], [-2, 2], [-1, 1] ]
+
+console.log(allSumZero([-3, -2, -1, 0, 1, 2]));
+// Output: [ [-2, 2], [-1, 1] ]
+```
+
+---
+
+## Complejidad
+
+- **Tiempo:** O(n) → cada elemento se visita como máximo una vez.
+- **Espacio:** O(1) → no se crean estructuras de datos adicionales significativas (excepto el array de resultado).
+
+---
+
+## Ventajas
+
+- Muy eficiente para arrays ordenados.
+- Reduce la necesidad de bucles anidados.
+- Fácil de implementar y entender.
+- Puede adaptarse para devolver **el primer par** o **todos los pares** según la necesidad.
