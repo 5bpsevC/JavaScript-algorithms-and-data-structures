@@ -1,7 +1,7 @@
 // Dadas dos cadenas, escribe una función para determinar si la segunda cadena es un anagrama de la primera.
 // Un anagrama es una palabra, frase o nombre que se forma reordenando las letras de otra, como "cinema" , que se forma a partir de "iceman" .
 function validAnagram(arr1: string, arr2: string) {
-  if (arr1.length !== arr2.length) {
+  if (!arr1 || !arr2 || arr1.length !== arr2.length) {
     return false;
   }
 
@@ -25,7 +25,7 @@ function validAnagram(arr1: string, arr2: string) {
   return true;
 }
 
-console.log(validAnagram("", "")); // true
+console.log(validAnagram("", "")); // false
 console.log(validAnagram("cinema", "iceman")); // true
 console.log(validAnagram("aaz", "zza")); // false
 console.log(validAnagram("anagram", "nagaram")); // true
