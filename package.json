@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/index.ts",
+    "countAllChars": "ts-node ./src/01-first-steps/countAllChars.ts",
+    "FrequencyCounterPattern": "ts-node ./src/02-problem-solving-pattern/01-FrecuencyCounterPattern/FrequencyCounterPattern.ts",
+    "Anagram": "ts-node ./src/02-problem-solving-pattern/01-FrecuencyCounterPattern/anagram.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
