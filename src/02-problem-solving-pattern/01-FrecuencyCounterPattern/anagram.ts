@@ -19,7 +19,7 @@ function validAnagram(arr1: string, arr2: string) {
     if (!anagram[char]) {
       return false;
     } else {
-      anagram[char]--;
+      anagram[char]-=1;
     }
   }
   return true;
