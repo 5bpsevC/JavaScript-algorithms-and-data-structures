@@ -188,3 +188,116 @@ Si se completó todo → Retornar true
 4. **Resultado final:** Si todo coincide, retorna `true`.
 
 ---
+
+## Ejemplo con Anagrama
+
+```ts
+// Dadas dos cadenas, escribe una función para determinar si la segunda cadena es un anagrama de la primera.
+// Un anagrama es una palabra, frase o nombre que se forma reordenando las letras de otra, como "cinema" , que se forma a partir de "iceman" .
+function validAnagram(arr1: string, arr2: string) {
+  // ✅ Paso 1: Validación inicial
+  // Si cualquiera de las cadenas es vacía o no existe, o si tienen diferente longitud, no pueden ser anagramas
+  if (!arr1 || !arr2 || arr1.length !== arr2.length) {
+    return false;
+  }
+
+  // ✅ Paso 2: Crear un contador de letras para la primera cadena
+  // La clave del objeto será la letra y el valor será cuántas veces aparece
+  const anagram: { [key: string]: number } = {};
+
+  // Iteramos sobre cada letra de arr1
+  for (let char of arr1) {
+    if (anagram[char]) {
+      // Si la letra ya existe en el contador, incrementamos su valor
+      anagram[char] += 1;
+    } else {
+      // Si la letra no existe, la inicializamos con 1
+      anagram[char] = 1;
+    }
+  }
+
+  // ✅ Paso 3: Verificar cada letra de la segunda cadena
+  for (let char of arr2) {
+    if (!anagram[char]) {
+      // Si la letra no existe en el contador o ya se ha usado todas sus ocurrencias
+      // significa que arr2 tiene una letra extra o diferente → no es anagrama
+      return false;
+    } else {
+      // Si existe, descontamos una ocurrencia de esa letra
+      // Descontar la ocurrencia asegura que cada letra de la segunda cadena
+      // solo se use tantas veces como aparece en la primera, que es justo lo que define un anagrama
+      anagram[char] -= 1;
+    }
+  }
+
+  // ✅ Paso 4: Si llegamos hasta aquí, todas las letras de arr2 coincidieron con arr1
+  // Entonces sí es un anagrama
+  return true;
+}
+
+console.log(validAnagram("", "")); // false
+console.log(validAnagram("cinema", "iceman")); // true
+console.log(validAnagram("aaz", "zza")); // false
+console.log(validAnagram("anagram", "nagaram")); // true
+console.log(validAnagram("rat", "car")); // false
+console.log(validAnagram("awesome", "awesom")); // false
+console.log(validAnagram("qwerty", "qeywrt")); // true
+console.log(validAnagram("texttwisttime", "timetwisttext")); // true
+```
+
+---
+
+Vamos a verlo paso a paso con **`arr1 = "anagram"`** y **`arr2 = "nagaram"`** usando tu contador de letras.
+
+### 1️⃣ Crear el contador a partir de `arr1`
+
+```ts
+arr1 = "anagram";
+anagram = {};
+```
+
+Iteramos sobre cada letra:
+
+| Letra | Acción                    | Contador actual                  |
+| ----- | ------------------------- | -------------------------------- |
+| 'a'   | No existe → inicializamos | { a: 1 }                         |
+| 'n'   | No existe → inicializamos | { a: 1, n: 1 }                   |
+| 'a'   | Existe → +1               | { a: 2, n: 1 }                   |
+| 'g'   | No existe → inicializamos | { a: 2, n: 1, g: 1 }             |
+| 'r'   | No existe → inicializamos | { a: 2, n: 1, g: 1, r: 1 }       |
+| 'a'   | Existe → +1               | { a: 3, n: 1, g: 1, r: 1 }       |
+| 'm'   | No existe → inicializamos | { a: 3, n: 1, g: 1, r: 1, m: 1 } |
+
+✅ Contador final después de `arr1`:
+
+```ts
+{ a: 3, n: 1, g: 1, r: 1, m: 1 }
+```
+
+---
+
+### 2️⃣ Verificar `arr2 = "nagaram"`
+
+Ahora iteramos sobre cada letra de `arr2` y **descontamos**:
+
+| Letra | Contador antes                   | Acción              | Contador después                 |
+| ----- | -------------------------------- | ------------------- | -------------------------------- |
+| 'n'   | { a: 3, n: 1, g: 1, r: 1, m: 1 } | Existe → restamos 1 | { a: 3, n: 0, g: 1, r: 1, m: 1 } |
+| 'a'   | { a: 3, n: 0, g: 1, r: 1, m: 1 } | Existe → restamos 1 | { a: 2, n: 0, g: 1, r: 1, m: 1 } |
+| 'g'   | { a: 2, n: 0, g: 1, r: 1, m: 1 } | Existe → restamos 1 | { a: 2, n: 0, g: 0, r: 1, m: 1 } |
+| 'a'   | { a: 2, n: 0, g: 0, r: 1, m: 1 } | Existe → restamos 1 | { a: 1, n: 0, g: 0, r: 1, m: 1 } |
+| 'r'   | { a: 1, n: 0, g: 0, r: 1, m: 1 } | Existe → restamos 1 | { a: 1, n: 0, g: 0, r: 0, m: 1 } |
+| 'a'   | { a: 1, n: 0, g: 0, r: 0, m: 1 } | Existe → restamos 1 | { a: 0, n: 0, g: 0, r: 0, m: 1 } |
+| 'm'   | { a: 0, n: 0, g: 0, r: 0, m: 1 } | Existe → restamos 1 | { a: 0, n: 0, g: 0, r: 0, m: 0 } |
+
+---
+
+### 3️⃣ Resultado final
+
+- Todas las letras de `arr2` se encontraron en el contador y **se consumieron correctamente**.
+- Ninguna letra “sobró” ni faltó.
+
+✅ Por lo tanto, `"nagaram"` **sí es un anagrama de `"anagram"`** → `true`.
+
+---
+
