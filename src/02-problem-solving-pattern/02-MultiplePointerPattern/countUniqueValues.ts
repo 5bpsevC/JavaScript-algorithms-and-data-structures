@@ -4,12 +4,11 @@ function countUniqueValues(arr: number[]): number {
   arr.sort((a, b) => a - b);
 
   let i = 0;
-  let current = arr[0]; // valor actual seguro
 
   for (let j = 1; j < arr.length; j++) {
-    if (arr[j] !== current) {
+    if (arr[i] !== arr[j]) {
       i++;
-      current = arr[j]; // actualizamos el valor único
+      arr[i] = arr[j]!;
     }
   }
 
