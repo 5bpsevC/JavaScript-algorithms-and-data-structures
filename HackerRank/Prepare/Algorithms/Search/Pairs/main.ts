@@ -30,7 +30,7 @@ function pairs(k: number, arr: number[]): number {
 
 function pair1(k: number, arr: number[]): number {
   let count = 0;
-  const numMap: Record<number, boolean> = {};
+  const numMap: { [key: number]: boolean } = {};
 
   for (const num of arr) {
     numMap[num] = true;
