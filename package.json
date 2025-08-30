@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
+
   "scripts": {
     "dev": "ts-node src/index.ts",
     "countAllChars": "ts-node ./src/01-first-steps/countAllChars.ts",
