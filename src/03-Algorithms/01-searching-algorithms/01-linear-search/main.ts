@@ -30,8 +30,8 @@ const americaCities = [
 
 const searchCity = (cities: string[], city: string) => {
   for (let index = 0; index < cities.length; index++) {
-    if (cities[index] === city) return index;
+    if (cities[index] === city) return cities[index];
   }
   return -1;
 };
-console.log(searchCity(americaCities, "Phoenix 🌵"));
+console.log(searchCity(americaCities, "Phoenix 🌵")); // Phoenix 🌵
