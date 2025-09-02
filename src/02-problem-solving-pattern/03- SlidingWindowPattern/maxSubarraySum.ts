@@ -23,6 +23,34 @@ function maxSubarraySum(arr: number[], num: number): number | null {
   return maxSum;
 }
 
+function maxSubarraySum1(arr: number[], num: number): number | null {
+  if (arr.length < num) return null;
+
+  let maxSum = 0;
+  let currentSum = 0;
+  let start = 0;
+  let end = 0;
+
+  // Inicializa la primera ventana
+  while (end < num) {
+    currentSum += arr[end]!;
+    end++;
+  }
+
+  maxSum = currentSum;
+
+  // Mueve ambos punteros hacia adelante
+  while (end < arr.length) {
+    currentSum = currentSum - arr[start]! + arr[end]!;
+    maxSum = Math.max(maxSum, currentSum);
+    start++;
+    end++;
+  }
+
+  return maxSum;
+}
+
+
 // Ejemplo de uso
 const result = maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
 console.log(result); // 19

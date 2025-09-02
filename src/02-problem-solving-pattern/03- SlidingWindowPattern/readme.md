@@ -1,6 +1,8 @@
 # **Sliding Window Pattern**
 
-Este patrón implica la creación de una ventana  que puede ser una matriz o un número de una posición a otra.
+[Ventana deslizante](https://www.youtube.com/watch?v=tk38CTSAYsg&ab_channel=NikhilLohia)
+
+Este patrón implica la creación de una ventana que puede ser una matriz o un número de una posición a otra.
 
 Dependiendo de una determinada condición, la ventana aumenta o se cierra (y se crea una nueva ventana)
 
