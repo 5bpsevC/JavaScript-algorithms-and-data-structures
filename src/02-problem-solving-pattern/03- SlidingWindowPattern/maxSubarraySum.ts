@@ -17,6 +17,7 @@ function maxSubarraySum(arr: number[], num: number): number | null {
   // Desliza la ventana por el array
   for (let i = num; i < arr.length; i++) {
     tempSum = tempSum - arr[i - num]! + arr[i]!;
+    console.log(`Suma de la ventana actual: ${tempSum} - Suma máxima: ${maxSum}`);
     maxSum = Math.max(maxSum, tempSum);
   }
 
