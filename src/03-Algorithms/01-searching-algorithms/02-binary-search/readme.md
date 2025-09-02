@@ -3,7 +3,7 @@
 ## 📌 ¿Qué es?
 
 El **Binary Search** (búsqueda binaria) es un algoritmo eficiente para encontrar un valor en un **array ordenado**.  
-En lugar de revisar cada elemento uno por uno (como en Linear Search), divide el array en mitades y decide en cuál seguir buscando.
+En lugar de revisar cada elemento uno por uno (como en Linear Search), divide el array en mitades y decide en cuál seguir buscando. Binary Search solo funciona con matrices ordenadas.
 
 Esto reduce el tiempo de búsqueda de **O(n)** a **O(log n)**.
 
@@ -11,9 +11,12 @@ Esto reduce el tiempo de búsqueda de **O(n)** a **O(log n)**.
 
 ## 🧩 Patrón que utiliza
 
-- **Multiple Pointers Pattern**: usamos dos punteros (`lo` y `hi`) que enmarcan el rango de búsqueda.
-- Cada paso ajusta los punteros hacia el centro según la comparación.
-- También se considera un caso de **Divide & Conquer** porque parte el problema en mitades.
+- **Multiple Pointers Pattern**: usamos dos punteros (`left` y `rigth`) que enmarcan el rango de búsqueda.
+- left apunta al inicio de la matriz
+- right apunta al final de la matriz
+- mid se calcula como el punto medio entre left y right
+
+Se ajustan los punteros según el valor que busquemos
 
 ---
 
@@ -24,20 +27,44 @@ Esto reduce el tiempo de búsqueda de **O(n)** a **O(log n)**.
 
 ---
 
+
+
+# Pseudocódigo
+
+```
+función BúsquedaBinaria(array, valorBuscado):
+    left ← 0
+    right ← longitud(array) - 1
+
+    mientras left <= right:
+        mid ← floor((left + right) / 2)
+
+        si array[mid] == valorBuscado:
+            retornar mid
+        
+        si array[mid] < valorBuscado:
+            left ← mid + 1
+        sino:
+            right ← mid - 1
+
+    retornar -1  // valor no encontrado
+
+```
+
 ## ✅ Código en TypeScript (iterativo)
 
 ```ts
 function binarySearch(arr: number[], target: number): number {
-  let lo = 0,
-    hi = arr.length - 1;
+  let left  = 0
+  let right = arr.length - 1;
 
-  while (lo <= hi) {
-    const mid = lo + Math.floor((hi - lo) / 2);
+  while (left <= right) {
+    const mid = left + Math.floor((right - left) / 2);
     const val = arr[mid];
 
     if (val === target) return mid; // 🎯 encontrado
     if (val < target) lo = mid + 1; // buscar a la derecha
-    else hi = mid - 1; // buscar a la izquierda
+    else right = mid - 1; // buscar a la izquierda
   }
 
   return -1; // no encontrado
